@@ -5,6 +5,7 @@ public class AdvancedCalculator {
         return a * b;
     }
 
+    //checks if a number is even
     public boolean isEven(int number) {
         return number % 2 == 0;
     }
