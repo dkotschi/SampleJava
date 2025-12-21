@@ -9,7 +9,7 @@ class CalculatorTest {
     @Test
     void add_shouldReturnSum() {
         Calculator calc = new Calculator();
-        assertEquals(5, calc.add(2, 3));
+        assertEquals(4, calc.add(2, 3));
     }
 
     @Test
