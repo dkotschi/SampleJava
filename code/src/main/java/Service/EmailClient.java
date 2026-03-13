@@ -1,4 +1,4 @@
-package sample.Service;
+package Service;
 
 public interface EmailClient {
 

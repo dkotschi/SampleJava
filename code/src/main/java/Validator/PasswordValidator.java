@@ -1,4 +1,4 @@
-package sample.Validator;
+package Validator;
 
 public class PasswordValidator {
 
