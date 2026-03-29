@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TestGenAgent Evaluation</title>
+
+    <style>
+        #classTable th:nth-child(1),
+        #classTable td:nth-child(1),
+        #classTable th:nth-child(4),
+        #classTable td:nth-child(4),
+        #classTable th:nth-child(7),
+        #classTable td:nth-child(7),
+        #classTable th:nth-child(10),
+        #classTable td:nth-child(10) {
+            border-right: 2px solid #e0e0e0;
+            padding-right: 12px;
+        }
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            margin: 0.2rem 0 0.6rem 0;
+        }
+
+        .muted {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            gap: 16px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border-bottom: 1px solid #eee;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            position: sticky;
+            top: 0;
+            background: #fafafa;
+            z-index: 1;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid #ddd;
+            font-size: 0.85rem;
+        }
+
+        .ok {
+            background: #e8fff0;
+            border-color: #b7efc5;
+        }
+
+        .bad {
+            background: #ffecec;
+            border-color: #ffb3b3;
+        }
+
+        .bar {
+            height: 10px;
+            background: #eee;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+        }
+
+        .small {
+            font-size: 0.85rem;
+        }
+
+        details {
+            margin: 6px 0;
+        }
+
+        summary {
+            cursor: pointer;
+        }
+
+        input[type='search'] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .bar-red span {
+            background: #e74c3c;
+        }
+
+        .bar-yellow span {
+            background: #f1c40f;
+        }
+
+        .bar-green span {
+            background: #2ecc71;
+        }
+
+        .bar-blue-25 span {
+            background: #dbeafe;
+        }
+
+        .bar-blue-50 span {
+            background: #93c5fd;
+        }
+
+        .bar-blue-75 span {
+            background: #3b82f6;
+        }
+
+        .bar-blue-100 span {
+            background: #1e3a8a;
+        }
+    </style>
+
+    <script>
+        function pct(v) {
+            if (v == null || v === '') return null;
+            let n = parseFloat(v);
+            return isNaN(n) ? null : n;
+        }
+
+        function sortTable(tableId, colIdx, numeric) {
+            const t = document.getElementById(tableId);
+            const tb = t.tBodies[0];
+            const rows = [...tb.rows];
+            const dir = t.getAttribute('data-dir') === 'asc' ? 'desc' : 'asc';
+            t.setAttribute('data-dir', dir);
+            rows.sort((a, b) => {
+                let av = a.cells[colIdx].getAttribute('data-sort') ?? a.cells[colIdx].innerText;
+                let bv = b.cells[colIdx].getAttribute('data-sort') ?? b.cells[colIdx].innerText;
+                if (numeric) {
+                    av = pct(av);
+                    bv = pct(bv);
+                    av = (av == null ? -1e9 : av);
+                    bv = (bv == null ? -1e9 : bv);
+                }
+                if (av < bv) return dir === 'asc' ? -1 : 1;
+                if (av > bv) return dir === 'asc' ? 1 : -1;
+                return 0;
+            });
+            rows.forEach(r => tb.appendChild(r));
+        }
+
+        function filterClasses() {
+            const q = document.getElementById('classFilter').value.toLowerCase();
+            const tb = document.getElementById('classTable').tBodies[0];
+            [...tb.rows].forEach(r => {
+                const name = r.cells[0].innerText.toLowerCase();
+                r.style.display = name.includes(q) ? '' : 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+
+<h1>TestGenAgent Evaluation</h1>
+
+<div class="muted">
+    <div>RunId: <span>SampleJava</span></div>
+    <div>Project: <span>https://github.com/dkotschi/SampleJava.git</span></div>
+    <div>Branch: <span>main</span></div>
+    <div>Started:
+        <span>29.03.2026 | 17:37:16</span>
+    </div>
+    <div>
+        Finished:
+        <span>29.03.2026 | 17:38:04</span>
+    </div>
+    <div>
+        Duration:
+        <span>0h 0m 47s 890ms</span>
+    </div>
+</div>
+
+<div style="margin-top:10px">
+<span class="tag  ok">SUCCESS</span>
+</div>
+
+<!-- GRID -->
+<div class="grid" style="margin-top:16px">
+
+    <!-- LLM TOTALS -->
+    <div class="card">
+        <h2>LLM totals</h2>
+        <table>
+            <tr>
+                <td>Prompt tokens</td>
+                <td class="right">8553</td>
+            </tr>
+            <tr>
+                <td>Completion tokens</td>
+                <td class="right">336</td>
+            </tr>
+            <tr>
+                <td>LLM calls</td>
+                <td class="right">6</td>
+            </tr>
+            <tr>
+                <td>LLM call millis</td>
+                <td class="right">24839</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- RUN SNAPSHOTS -->
+    <div class="card">
+        <h2>Number of Test Classes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Label</th>
+                <th class="nowrap">At</th>
+                <th class="right">Classes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>initial</td>
+                <td class="nowrap small">29.03.2026 | 17:37:41</td>
+                <td class="right">1</td>
+            </tr>
+            <tr>
+                <td>final</td>
+                <td class="nowrap small">29.03.2026 | 17:38:04</td>
+                <td class="right">2</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Coverage</h2>
+        <div class="muted small" style="margin-top:8px">
+            Average over classes.
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Label</th>
+                <th class="right">Avg Line %</th>
+                <th class="right">Avg Branch %</th>
+                <th class="right">Avg Mutation %</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>initial</td>
+
+                <td class="right"
+                    data-sort="55.56">55.56</td>
+
+                <td class="right"
+                    data-sort="25.00">25.00</td>
+
+                <td class="right"
+                    data-sort="35.72">35.72</td>
+            </tr>
+            <tr>
+                <td>final</td>
+
+                <td class="right"
+                    data-sort="88.89">88.89</td>
+
+                <td class="right"
+                    data-sort="75.00">75.00</td>
+
+                <td class="right"
+                    data-sort="85.72">85.72</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- CLASSES -->
+<div class="card" style="margin-top:16px">
+    <h2>Classes</h2>
+
+    <div class="muted small">
+        Click table headers to sort. Filter by class name.
+    </div>
+
+    <div style="margin:10px 0">
+        <input id="classFilter" type="search"
+               placeholder="Filter classes..."
+               oninput="filterClasses()">
+    </div>
+
+    <div style="max-height:520px;overflow:auto;border:1px solid #eee;border-radius:10px">
+        <table id="classTable" data-dir="asc">
+            <thead>
+            <tr>
+                <th onclick="sortTable('classTable',0,false)">Class</th>
+                <th class="right" onclick="sortTable('classTable',1,true)">
+                    Before Line%
+                </th>
+                <th class="right" onclick="sortTable('classTable',2,true)">After
+                    Line%
+                </th>
+                <th class="right" onclick="sortTable('classTable',3,true)">Gain
+                    Line%
+                </th>
+                <th class="right" onclick="sortTable('classTable',4,true)">
+                    Before Branch%
+                </th>
+                <th class="right" onclick="sortTable('classTable',5,true)">After
+                    Branch%
+                </th>
+                <th class="right" onclick="sortTable('classTable',6,true)">Gain
+                    Branch%
+                </th>
+                <th class="right" onclick="sortTable('classTable',7,true)">
+                    Before Mut%
+                </th>
+                <th class="right" onclick="sortTable('classTable',8,true)">After
+                    Mut%
+                </th>
+                <th class="right" onclick="sortTable('classTable',9,true)">Gain
+                    Mut%
+                </th>
+                <th class="right" onclick="sortTable('classTable',10,true)">
+                    Attempts
+                </th>
+                <th class="nowrap">Success</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    <span>AdvancedCalculator.java</span>
+
+                    <details class="small">
+                        <summary class="muted">details</summary>
+
+                        <!-- Attempts -->
+                        <div style="margin:8px 0">
+                            <b>Attempts</b>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Type</th>
+                                    <th>Success</th>
+                                    <th class="right">Calls</th>
+                                    <th class="right">ms</th>
+                                    <th class="right">PromptTok</th>
+                                    <th class="right">CompTok</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>generate</td>
+                                    <td>
+                        <span class="tag  ok">OK</span>
+                                    </td>
+                                    <td class="right">1</td>
+                                    <td class="right">5433</td>
+                                    <td class="right">769</td>
+                                    <td class="right">195</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Snapshots -->
+                        <div style="margin-top:10px">
+                            <b>Snapshots</b>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Label</th>
+                                    <th class="nowrap">At</th>
+                                    <th class="right">Line%</th>
+                                    <th class="right">Branch%</th>
+                                    <th class="right">Mut%</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>before:baseline</td>
+                                    <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                                    <td class="right">0.0</td>
+                                    <td class="right">0.0</td>
+                                    <td class="right">0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>after:gen_1</td>
+                                    <td class="nowrap small">29.03.2026 | 17:37:56</td>
+                                    <td class="right">100.0</td>
+                                    <td class="right">100.0</td>
+                                    <td class="right">100.0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </details>
+                </td>
+
+                <td class="right" data-sort="0.00">
+    <div class="bar bar-red" title="0.00%">
+        <span style="width:0.0%"></span>
+    </div>
+    <div class="small">0.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-green" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-blue-100" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+
+                <td class="right" data-sort="0.00">
+    <div class="bar bar-red" title="0.00%">
+        <span style="width:0.0%"></span>
+    </div>
+    <div class="small">0.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-green" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-blue-100" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+
+                <td class="right" data-sort="0.00">
+    <div class="bar bar-red" title="0.00%">
+        <span style="width:0.0%"></span>
+    </div>
+    <div class="small">0.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-green" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+                <td class="right" data-sort="100.00">
+    <div class="bar bar-blue-100" title="100.00%">
+        <span style="width:100.0%"></span>
+    </div>
+    <div class="small">100.00</div>
+</td>
+
+
+                <td class="right">1</td>
+                <td>
+<span class="tag  ok">OK</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- EVENTS -->
+<div class="card" style="margin-top:16px">
+    <h2>Events</h2>
+    <div style="max-height:360px;overflow:auto;border:1px solid #eee;border-radius:10px">
+        <table>
+            <thead>
+            <tr>
+                <th class="nowrap">At</th>
+                <th>Level</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:16</td>
+                <td>INFO</td>
+                <td>Run started: project=https://github.com/dkotschi/SampleJava.git, repoRoot=code\files\SampleJava</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:16</td>
+                <td>INFO</td>
+                <td>Clone: repoRoot=code\files\SampleJava</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:16</td>
+                <td>INFO</td>
+                <td>Created and checked out branch: main</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:41</td>
+                <td>INFO</td>
+                <td>RunSnapshot: label=initial, classes=2</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                <td>INFO</td>
+                <td>LLM returned recommended classes[AdvancedCalculator.java]</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                <td>INFO</td>
+                <td>Selected 1 classes for generation</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                <td>INFO</td>
+                <td>Class started: AdvancedCalculator.java</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                <td>INFO</td>
+                <td>Attempt started: class=AdvancedCalculator.java, #1, type=generate</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:43</td>
+                <td>INFO</td>
+                <td>Snapshot: class=AdvancedCalculator.java, label=before:baseline</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:56</td>
+                <td>INFO</td>
+                <td>Snapshot: class=AdvancedCalculator.java, label=after:gen_1</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:56</td>
+                <td>INFO</td>
+                <td>Attempt finished: class=AdvancedCalculator.java, #1, success=true</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:56</td>
+                <td>INFO</td>
+                <td>Class finished: AdvancedCalculator.java, success=true</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:37:56</td>
+                <td>INFO</td>
+                <td>Accepted tests for AdvancedCalculator.java | line 0.0 -&gt; 100.0 | branch 0.0 -&gt; 100.0 | mut 0.0 -&gt; 100.0</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:38:04</td>
+                <td>INFO</td>
+                <td>RunSnapshot: label=final, classes=2</td>
+            </tr>
+            <tr>
+                <td class="nowrap small">29.03.2026 | 17:38:04</td>
+                <td>INFO</td>
+                <td>Run finished: success=true</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
