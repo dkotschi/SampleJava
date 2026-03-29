@@ -15,7 +15,11 @@ class CalculatorTest {
     @Test
     void subtract_shouldReturnDifference() {
         System.out.println("Warte 20 Sekunden vor subtract-Test...");
-        Thread.sleep(20000);
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         Calculator calc = new Calculator();
         assertEquals(1, calc.subtract(3, 2));
