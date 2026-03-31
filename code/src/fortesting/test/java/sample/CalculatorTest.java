@@ -23,4 +23,12 @@ class CalculatorTest {
         Calculator calc = new Calculator();
         assertThrows(IllegalArgumentException.class, () -> calc.divide(10, 0));
     }
+
+    @Test
+    void divide_shouldReturnQuotient() {
+        Calculator calc = new Calculator();
+        assertEquals(5, calc.divide(10, 2));
+        assertEquals(-3, calc.divide(9, -3));
+        assertEquals(0, calc.divide(0, 5));
+    }
 }

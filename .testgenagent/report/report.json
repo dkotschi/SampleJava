@@ -1,0 +1,280 @@
+{
+  "branchName" : "main",
+  "classes" : {
+    "AdvancedCalculator.java" : {
+      "attempts" : [ {
+        "index" : 1,
+        "type" : "generate",
+        "completionTokens" : 220,
+        "failureReason" : null,
+        "finishedAt" : "2026-03-31T08:10:15.461269Z",
+        "llmCallMillis" : 2985,
+        "llmCalls" : 1,
+        "promptTokens" : 624,
+        "startedAt" : "2026-03-31T08:09:54.679474600Z",
+        "success" : true
+      } ],
+      "className" : "AdvancedCalculator.java",
+      "failureReason" : null,
+      "finishedAt" : "2026-03-31T08:10:15.468425800Z",
+      "snapshots" : [ {
+        "label" : "before:baseline",
+        "coverage" : {
+          "lineCoveragePct" : 0.0,
+          "branchCoveragePct" : 0.0,
+          "linesCovered" : 0,
+          "linesTotal" : 3,
+          "branchesCovered" : 0,
+          "branchesTotal" : 2
+        },
+        "mutation" : {
+          "mutationScorePct" : 0.0,
+          "generated" : null,
+          "killed" : null,
+          "survived" : null,
+          "noCoverage" : null,
+          "timedOut" : null,
+          "runErrors" : null
+        },
+        "tests" : null,
+        "tools" : null,
+        "at" : "2026-03-31T08:09:54.685420900Z"
+      }, {
+        "label" : "after:gen_1",
+        "coverage" : {
+          "lineCoveragePct" : 100.0,
+          "branchCoveragePct" : 100.0,
+          "linesCovered" : 3,
+          "linesTotal" : 3,
+          "branchesCovered" : 2,
+          "branchesTotal" : 2
+        },
+        "mutation" : {
+          "mutationScorePct" : 100.0,
+          "generated" : null,
+          "killed" : null,
+          "survived" : null,
+          "noCoverage" : null,
+          "timedOut" : null,
+          "runErrors" : null
+        },
+        "tests" : null,
+        "tools" : null,
+        "at" : "2026-03-31T08:10:15.461269Z"
+      } ],
+      "startedAt" : "2026-03-31T08:09:54.675406800Z",
+      "success" : true
+    },
+    "Calculator.java" : {
+      "attempts" : [ {
+        "index" : 1,
+        "type" : "generate",
+        "completionTokens" : 196,
+        "failureReason" : null,
+        "finishedAt" : "2026-03-31T08:10:33.846243900Z",
+        "llmCallMillis" : 4417,
+        "llmCalls" : 1,
+        "promptTokens" : 1229,
+        "startedAt" : "2026-03-31T08:10:15.471779600Z",
+        "success" : true
+      } ],
+      "className" : "Calculator.java",
+      "failureReason" : null,
+      "finishedAt" : "2026-03-31T08:10:33.847244800Z",
+      "snapshots" : [ {
+        "label" : "before:baseline",
+        "coverage" : {
+          "lineCoveragePct" : 83.33,
+          "branchCoveragePct" : 50.0,
+          "linesCovered" : 5,
+          "linesTotal" : 6,
+          "branchesCovered" : 1,
+          "branchesTotal" : 2
+        },
+        "mutation" : {
+          "mutationScorePct" : 71.43,
+          "generated" : null,
+          "killed" : null,
+          "survived" : null,
+          "noCoverage" : null,
+          "timedOut" : null,
+          "runErrors" : null
+        },
+        "tests" : null,
+        "tools" : null,
+        "at" : "2026-03-31T08:10:15.471779600Z"
+      }, {
+        "label" : "after:gen_1",
+        "coverage" : {
+          "lineCoveragePct" : 100.0,
+          "branchCoveragePct" : 100.0,
+          "linesCovered" : 6,
+          "linesTotal" : 6,
+          "branchesCovered" : 2,
+          "branchesTotal" : 2
+        },
+        "mutation" : {
+          "mutationScorePct" : 100.0,
+          "generated" : null,
+          "killed" : null,
+          "survived" : null,
+          "noCoverage" : null,
+          "timedOut" : null,
+          "runErrors" : null
+        },
+        "tests" : null,
+        "tools" : null,
+        "at" : "2026-03-31T08:10:33.846243900Z"
+      } ],
+      "startedAt" : "2026-03-31T08:10:15.471779600Z",
+      "success" : true
+    }
+  },
+  "events" : [ {
+    "level" : "INFO",
+    "message" : "Run started: project=https://github.com/dkotschi/SampleJava, repoRoot=code\\files\\SampleJava",
+    "at" : "2026-03-31T08:09:25.377879200Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Clone: repoRoot=code\\files\\SampleJava",
+    "at" : "2026-03-31T08:09:25.377879200Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Created and checked out separate branch: main_testgen",
+    "at" : "2026-03-31T08:09:25.480808200Z"
+  }, {
+    "level" : "INFO",
+    "message" : "RunSnapshot: label=initial, classes=2",
+    "at" : "2026-03-31T08:09:53.421514Z"
+  }, {
+    "level" : "INFO",
+    "message" : "LLM returned recommended classes[AdvancedCalculator.java, Calculator.java]",
+    "at" : "2026-03-31T08:09:54.601528800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Selected 2 classes for generation",
+    "at" : "2026-03-31T08:09:54.668275500Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Class started: AdvancedCalculator.java",
+    "at" : "2026-03-31T08:09:54.675406800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Attempt started: class=AdvancedCalculator.java, #1, type=generate",
+    "at" : "2026-03-31T08:09:54.679474600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Snapshot: class=AdvancedCalculator.java, label=before:baseline",
+    "at" : "2026-03-31T08:09:54.685420900Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Snapshot: class=AdvancedCalculator.java, label=after:gen_1",
+    "at" : "2026-03-31T08:10:15.461269Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Attempt finished: class=AdvancedCalculator.java, #1, success=true",
+    "at" : "2026-03-31T08:10:15.466424400Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Class finished: AdvancedCalculator.java, success=true",
+    "at" : "2026-03-31T08:10:15.468425800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Accepted tests for AdvancedCalculator.java | line 0.0 -> 100.0 | branch 0.0 -> 100.0 | mut 0.0 -> 100.0",
+    "at" : "2026-03-31T08:10:15.469608100Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Class started: Calculator.java",
+    "at" : "2026-03-31T08:10:15.471779600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Attempt started: class=Calculator.java, #1, type=generate",
+    "at" : "2026-03-31T08:10:15.471779600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Snapshot: class=Calculator.java, label=before:baseline",
+    "at" : "2026-03-31T08:10:15.471779600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Snapshot: class=Calculator.java, label=after:gen_1",
+    "at" : "2026-03-31T08:10:33.846243900Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Attempt finished: class=Calculator.java, #1, success=true",
+    "at" : "2026-03-31T08:10:33.846243900Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Class finished: Calculator.java, success=true",
+    "at" : "2026-03-31T08:10:33.847244800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Accepted tests for Calculator.java | line 83.33 -> 100.0 | branch 50.0 -> 100.0 | mut 71.43 -> 100.0",
+    "at" : "2026-03-31T08:10:33.847244800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "RunSnapshot: label=final, classes=2",
+    "at" : "2026-03-31T08:10:48.601937400Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Run finished: success=true",
+    "at" : "2026-03-31T08:10:48.602850100Z"
+  } ],
+  "failureReason" : null,
+  "finishedAt" : "2026-03-31T08:10:48.602850100Z",
+  "projectName" : "https://github.com/dkotschi/SampleJava",
+  "repoRoot" : "file:///C:/Users/david/Documents/Uni/bachelorarbeit-111735/code/files/SampleJava/",
+  "runId" : "SampleJava",
+  "runSnapshots" : [ {
+    "label" : "initial",
+    "classCoverages" : [ {
+      "className" : "Calculator.java",
+      "lineCoverage" : 83.33,
+      "branchCoverage" : 50.0,
+      "mutationCoverage" : 71.43,
+      "coveredLines" : 5,
+      "totalLines" : 6,
+      "coveredBranches" : 1,
+      "totalBranches" : 2
+    }, {
+      "className" : "AdvancedCalculator.java",
+      "lineCoverage" : 0.0,
+      "branchCoverage" : 0.0,
+      "mutationCoverage" : 0.0,
+      "coveredLines" : 0,
+      "totalLines" : 3,
+      "coveredBranches" : 0,
+      "totalBranches" : 2
+    } ],
+    "testClasses" : 1,
+    "at" : "2026-03-31T08:09:53.421514Z"
+  }, {
+    "label" : "final",
+    "classCoverages" : [ {
+      "className" : "Calculator.java",
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 6,
+      "totalLines" : 6,
+      "coveredBranches" : 2,
+      "totalBranches" : 2
+    }, {
+      "className" : "AdvancedCalculator.java",
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 3,
+      "totalLines" : 3,
+      "coveredBranches" : 2,
+      "totalBranches" : 2
+    } ],
+    "testClasses" : 2,
+    "at" : "2026-03-31T08:10:48.601937400Z"
+  } ],
+  "startedAt" : "2026-03-31T08:09:25.376533900Z",
+  "success" : true,
+  "totalLLMCallMillis" : 16241,
+  "totalLLMCalls" : 7,
+  "totalOutputTokens" : 563,
+  "totalPromptTokens" : 9484
+}
