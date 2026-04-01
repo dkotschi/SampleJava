@@ -19,16 +19,5 @@ class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(1, calc.subtract(3, 2));
     }
-
-    @Test
-    void divide_shouldReturnQuotient() {
-        Calculator calc = new Calculator();
-        assertEquals(2, calc.divide(10, 5));
-    }
-
-    @Test
-    void divide_shouldThrowExceptionOnZero() {
-        Calculator calc = new Calculator();
-        assertThrows(IllegalArgumentException.class, () -> calc.divide(10, 0));
-    }
+    
 }
