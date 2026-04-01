@@ -1,3 +1,5 @@
+
+
 package sample;
 
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,12 @@ class CalculatorTest {
     void subtract_shouldReturnDifference() {
         Calculator calc = new Calculator();
         assertEquals(1, calc.subtract(3, 2));
+    }
+
+    @Test
+    void divide_shouldReturnQuotient() {
+        Calculator calc = new Calculator();
+        assertEquals(2, calc.divide(10, 5));
     }
 
     @Test
