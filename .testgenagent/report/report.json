@@ -1,0 +1,213 @@
+{
+  "branchName" : "main",
+  "classes" : {
+    "Calculator.java" : {
+      "attempts" : [ {
+        "index" : 1,
+        "type" : "GENERATE",
+        "completionTokens" : 542,
+        "failureReason" : "Tests passed",
+        "finishedAt" : "2026-04-17T09:14:57.010707Z",
+        "llmCallMillis" : 12229,
+        "llmCalls" : 1,
+        "promptTokens" : 590,
+        "startedAt" : "2026-04-17T09:14:28.333639300Z",
+        "success" : true
+      } ],
+      "className" : "Calculator.java",
+      "classSnapshots" : [ {
+        "label" : "BEFOREbaseline",
+        "coverage" : {
+          "className" : "Calculator.java",
+          "lineCoverage" : 50.0,
+          "branchCoverage" : 0.0,
+          "mutationCoverage" : 57.14,
+          "coveredLines" : 3,
+          "totalLines" : 6,
+          "coveredBranches" : 0,
+          "totalBranches" : 2
+        },
+        "at" : "2026-04-17T09:14:28.335601500Z"
+      }, {
+        "label" : "AFTERgen_1",
+        "coverage" : {
+          "className" : "Calculator.java",
+          "lineCoverage" : 100.0,
+          "branchCoverage" : 100.0,
+          "mutationCoverage" : 100.0,
+          "coveredLines" : 6,
+          "totalLines" : 6,
+          "coveredBranches" : 2,
+          "totalBranches" : 2
+        },
+        "at" : "2026-04-17T09:14:57.009705400Z"
+      } ],
+      "failureReason" : "Coverage improvement",
+      "finishedAt" : "2026-04-17T09:14:57.016717800Z",
+      "startedAt" : "2026-04-17T09:14:28.330622300Z",
+      "success" : true
+    }
+  },
+  "events" : [ {
+    "level" : "INFO",
+    "message" : "Initializing base state and starting run",
+    "at" : "2026-04-17T09:13:59.151060700Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Cloning: code\\files\\SampleJava",
+    "at" : "2026-04-17T09:13:59.151060700Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Created and checked out separate branch: main_AUTO_TESTGEN",
+    "at" : "2026-04-17T09:13:59.219713300Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Operating system: Windows 11",
+    "at" : "2026-04-17T09:13:59.220709800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Project root in repository: code\\files\\SampleJava",
+    "at" : "2026-04-17T09:14:05.547864800Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Detected project Java version 21",
+    "at" : "2026-04-17T09:14:06.512784700Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Planned TEST command [cmd, /c, mvnw.cmd, clean, test]",
+    "at" : "2026-04-17T09:14:07.436787600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Planned MUTATION command [cmd, /c, mvnw.cmd, test-compile, org.pitest:pitest-maven:mutationCoverage]",
+    "at" : "2026-04-17T09:14:08.808351400Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Running baseline tests & metrics",
+    "at" : "2026-04-17T09:14:08.809244600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Asking LLM for class recommendations",
+    "at" : "2026-04-17T09:14:25.987658600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "LLM returned recommended classes: [Calculator.java]",
+    "at" : "2026-04-17T09:14:27.390372100Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Modules found: 1",
+    "at" : "2026-04-17T09:14:28.304638900Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Selected 1 classes for generation",
+    "at" : "2026-04-17T09:14:28.325647600Z"
+  }, {
+    "level" : "INFO",
+    "message" : "=============================================================================================================================================================",
+    "at" : "2026-04-17T09:14:28.330622300Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Selecting Calculator.java - class 1 of 1",
+    "at" : "2026-04-17T09:14:28.330622300Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Generating tests for Calculator.java (attempt 1)",
+    "at" : "2026-04-17T09:14:28.335601500Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Running tests for Calculator.java",
+    "at" : "2026-04-17T09:14:40.571189Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Tests passed after generation for Calculator.java (attempt: 1 )",
+    "at" : "2026-04-17T09:14:57.011714500Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Improvement for Calculator.java after",
+    "at" : "2026-04-17T09:14:57.017706900Z"
+  }, {
+    "level" : "INFO",
+    "message" : "=============================================================================================================================================================",
+    "at" : "2026-04-17T09:14:57.019706400Z"
+  }, {
+    "level" : "INFO",
+    "message" : "All 1 classes processed",
+    "at" : "2026-04-17T09:14:57.019706400Z"
+  }, {
+    "level" : "INFO",
+    "message" : "Running final tests after finishing",
+    "at" : "2026-04-17T09:14:57.022212Z"
+  } ],
+  "failureReason" : "Successfully generated test code",
+  "finishedAt" : "2026-04-17T09:15:19.033786900Z",
+  "gainResults" : {
+    "Calculator.java" : {
+      "branchCoverageGainPct" : 100.0,
+      "className" : "Calculator.java",
+      "lineCoverageGainPct" : 50.0,
+      "mutationScoreGainPct" : 42.86
+    },
+    "AdvancedCalculator.java" : {
+      "branchCoverageGainPct" : 0.0,
+      "className" : "AdvancedCalculator.java",
+      "lineCoverageGainPct" : 0.0,
+      "mutationScoreGainPct" : 0.0
+    }
+  },
+  "projectName" : "https://github.com/dkotschi/SampleJava.git",
+  "projectSnapshots" : [ {
+    "label" : "INITIAL",
+    "classCoverages" : [ {
+      "className" : "Calculator.java",
+      "lineCoverage" : 50.0,
+      "branchCoverage" : 0.0,
+      "mutationCoverage" : 57.14,
+      "coveredLines" : 3,
+      "totalLines" : 6,
+      "coveredBranches" : 0,
+      "totalBranches" : 2
+    }, {
+      "className" : "AdvancedCalculator.java",
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 3,
+      "totalLines" : 3,
+      "coveredBranches" : 2,
+      "totalBranches" : 2
+    } ],
+    "testClasses" : 2,
+    "at" : "2026-04-17T09:14:25.982621600Z"
+  }, {
+    "label" : "FINAL",
+    "classCoverages" : [ {
+      "className" : "Calculator.java",
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 6,
+      "totalLines" : 6,
+      "coveredBranches" : 2,
+      "totalBranches" : 2
+    }, {
+      "className" : "AdvancedCalculator.java",
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 3,
+      "totalLines" : 3,
+      "coveredBranches" : 2,
+      "totalBranches" : 2
+    } ],
+    "testClasses" : 2,
+    "at" : "2026-04-17T09:15:19.032780800Z"
+  } ],
+  "repoRoot" : "file:///C:/Users/KotschenrD/Documents/sumida/TestGenAgent/code/files/SampleJava/",
+  "runId" : "SampleJava",
+  "startedAt" : "2026-04-17T09:13:59.149915600Z",
+  "success" : true,
+  "tokenCost" : 0.00295875,
+  "totalLLMCallMillis" : 24085,
+  "totalLLMCalls" : 7,
+  "totalOutputTokens" : 784,
+  "totalPromptTokens" : 5563
+}
