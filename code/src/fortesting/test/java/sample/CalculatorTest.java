@@ -43,19 +43,10 @@ class CalculatorTest {
     }
 
     @Test
-    void subtract_resultNegative() {
+    void subtract_withNegativeResult() {
         Calculator calc = new Calculator();
         int a = 2;
         int b = 5;
-        int expected = a - b;
-        assertEquals(expected, calc.subtract(a, b));
-    }
-
-    @Test
-    void subtract_withZero() {
-        Calculator calc = new Calculator();
-        int a = 9;
-        int b = 0;
         int expected = a - b;
         assertEquals(expected, calc.subtract(a, b));
     }
@@ -79,16 +70,16 @@ class CalculatorTest {
     }
 
     @Test
-    void divide_truncatesTowardsZero() {
+    void divide_truncatesTowardsZeroForIntegers() {
         Calculator calc = new Calculator();
         int a = 7;
-        int b = 2;
+        int b = 3;
         int expected = a / b;
         assertEquals(expected, calc.divide(a, b));
     }
 
     @Test
-    void divide_byZeroThrowsException() {
+    void divide_byZeroShouldThrowException() {
         Calculator calc = new Calculator();
         int a = 5;
         int b = 0;

@@ -1,63 +1,17 @@
 {
   "branchName" : "main",
   "classes" : {
-    "AdvancedCalculator.java" : {
-      "attempts" : [ {
-        "index" : 1,
-        "type" : "GENERATE",
-        "completionTokens" : 474,
-        "failureReason" : "Tests passed",
-        "finishedAt" : "2026-04-17T08:47:07.009815Z",
-        "llmCallMillis" : 12539,
-        "llmCalls" : 1,
-        "promptTokens" : 313,
-        "startedAt" : "2026-04-17T08:46:37.514091400Z",
-        "success" : true
-      } ],
-      "className" : "AdvancedCalculator.java",
-      "classSnapshots" : [ {
-        "label" : "BEFOREbaseline",
-        "coverage" : {
-          "className" : "AdvancedCalculator.java",
-          "lineCoverage" : 0.0,
-          "branchCoverage" : 0.0,
-          "mutationCoverage" : 0.0,
-          "coveredLines" : 0,
-          "totalLines" : 3,
-          "coveredBranches" : 0,
-          "totalBranches" : 2
-        },
-        "at" : "2026-04-17T08:46:37.514091400Z"
-      }, {
-        "label" : "AFTERgen_1",
-        "coverage" : {
-          "className" : "AdvancedCalculator.java",
-          "lineCoverage" : 100.0,
-          "branchCoverage" : 100.0,
-          "mutationCoverage" : 100.0,
-          "coveredLines" : 3,
-          "totalLines" : 3,
-          "coveredBranches" : 2,
-          "totalBranches" : 2
-        },
-        "at" : "2026-04-17T08:47:07.009815Z"
-      } ],
-      "failureReason" : "Coverage improvement",
-      "finishedAt" : "2026-04-17T08:47:07.010812500Z",
-      "startedAt" : "2026-04-17T08:46:37.514091400Z",
-      "success" : true
-    },
     "Calculator.java" : {
       "attempts" : [ {
         "index" : 1,
         "type" : "GENERATE",
-        "completionTokens" : 590,
+        "completionTokens" : 542,
         "failureReason" : "Tests passed",
-        "finishedAt" : "2026-04-17T08:47:32.843459600Z",
-        "llmCallMillis" : 9739,
+        "finishedAt" : "2026-04-17T09:14:57.010707Z",
+        "llmCallMillis" : 12229,
         "llmCalls" : 1,
-        "promptTokens" : 873,
-        "startedAt" : "2026-04-17T08:47:07.014819900Z",
+        "promptTokens" : 590,
+        "startedAt" : "2026-04-17T09:14:28.333639300Z",
         "success" : true
       } ],
       "className" : "Calculator.java",
@@ -73,7 +27,7 @@
           "coveredBranches" : 0,
           "totalBranches" : 2
         },
-        "at" : "2026-04-17T08:47:07.014819900Z"
+        "at" : "2026-04-17T09:14:28.335601500Z"
       }, {
         "label" : "AFTERgen_1",
         "coverage" : {
@@ -86,129 +40,105 @@
           "coveredBranches" : 2,
           "totalBranches" : 2
         },
-        "at" : "2026-04-17T08:47:32.843459600Z"
+        "at" : "2026-04-17T09:14:57.009705400Z"
       } ],
       "failureReason" : "Coverage improvement",
-      "finishedAt" : "2026-04-17T08:47:32.844457Z",
-      "startedAt" : "2026-04-17T08:47:07.012768Z",
+      "finishedAt" : "2026-04-17T09:14:57.016717800Z",
+      "startedAt" : "2026-04-17T09:14:28.330622300Z",
       "success" : true
     }
   },
   "events" : [ {
     "level" : "INFO",
     "message" : "Initializing base state and starting run",
-    "at" : "2026-04-17T08:46:12.494409100Z"
+    "at" : "2026-04-17T09:13:59.151060700Z"
   }, {
     "level" : "INFO",
     "message" : "Cloning: code\\files\\SampleJava",
-    "at" : "2026-04-17T08:46:12.494409100Z"
+    "at" : "2026-04-17T09:13:59.151060700Z"
   }, {
     "level" : "INFO",
     "message" : "Created and checked out separate branch: main_AUTO_TESTGEN",
-    "at" : "2026-04-17T08:46:12.634696Z"
+    "at" : "2026-04-17T09:13:59.219713300Z"
   }, {
     "level" : "INFO",
     "message" : "Operating system: Windows 11",
-    "at" : "2026-04-17T08:46:12.635572500Z"
+    "at" : "2026-04-17T09:13:59.220709800Z"
   }, {
     "level" : "INFO",
     "message" : "Project root in repository: code\\files\\SampleJava",
-    "at" : "2026-04-17T08:46:13.610674200Z"
+    "at" : "2026-04-17T09:14:05.547864800Z"
   }, {
     "level" : "INFO",
     "message" : "Detected project Java version 21",
-    "at" : "2026-04-17T08:46:14.627796100Z"
+    "at" : "2026-04-17T09:14:06.512784700Z"
   }, {
     "level" : "INFO",
     "message" : "Planned TEST command [cmd, /c, mvnw.cmd, clean, test]",
-    "at" : "2026-04-17T08:46:15.660317300Z"
+    "at" : "2026-04-17T09:14:07.436787600Z"
   }, {
     "level" : "INFO",
     "message" : "Planned MUTATION command [cmd, /c, mvnw.cmd, test-compile, org.pitest:pitest-maven:mutationCoverage]",
-    "at" : "2026-04-17T08:46:16.634966300Z"
+    "at" : "2026-04-17T09:14:08.808351400Z"
   }, {
     "level" : "INFO",
     "message" : "Running baseline tests & metrics",
-    "at" : "2026-04-17T08:46:16.635968700Z"
+    "at" : "2026-04-17T09:14:08.809244600Z"
   }, {
     "level" : "INFO",
     "message" : "Asking LLM for class recommendations",
-    "at" : "2026-04-17T08:46:35.459427900Z"
+    "at" : "2026-04-17T09:14:25.987658600Z"
   }, {
     "level" : "INFO",
-    "message" : "LLM returned recommended classes: [AdvancedCalculator.java, Calculator.java]",
-    "at" : "2026-04-17T08:46:36.303571900Z"
+    "message" : "LLM returned recommended classes: [Calculator.java]",
+    "at" : "2026-04-17T09:14:27.390372100Z"
   }, {
     "level" : "INFO",
     "message" : "Modules found: 1",
-    "at" : "2026-04-17T08:46:37.503093100Z"
+    "at" : "2026-04-17T09:14:28.304638900Z"
   }, {
     "level" : "INFO",
-    "message" : "Selected 2 classes for generation",
-    "at" : "2026-04-17T08:46:37.513090100Z"
-  }, {
-    "level" : "INFO",
-    "message" : "=============================================================================================================================================================",
-    "at" : "2026-04-17T08:46:37.514091400Z"
-  }, {
-    "level" : "INFO",
-    "message" : "Selecting AdvancedCalculator.java - class 1 of 2",
-    "at" : "2026-04-17T08:46:37.514091400Z"
-  }, {
-    "level" : "INFO",
-    "message" : "Generating tests for AdvancedCalculator.java (attempt 1)",
-    "at" : "2026-04-17T08:46:37.514091400Z"
-  }, {
-    "level" : "INFO",
-    "message" : "Running tests for AdvancedCalculator.java",
-    "at" : "2026-04-17T08:46:50.060066700Z"
-  }, {
-    "level" : "INFO",
-    "message" : "Tests passed after generation for AdvancedCalculator.java (attempt: 1 )",
-    "at" : "2026-04-17T08:47:07.009815Z"
-  }, {
-    "level" : "INFO",
-    "message" : "Improvement for AdvancedCalculator.java after",
-    "at" : "2026-04-17T08:47:07.011769300Z"
+    "message" : "Selected 1 classes for generation",
+    "at" : "2026-04-17T09:14:28.325647600Z"
   }, {
     "level" : "INFO",
     "message" : "=============================================================================================================================================================",
-    "at" : "2026-04-17T08:47:07.013723300Z"
+    "at" : "2026-04-17T09:14:28.330622300Z"
   }, {
     "level" : "INFO",
-    "message" : "Selecting Calculator.java - class 2 of 2",
-    "at" : "2026-04-17T08:47:07.013723300Z"
+    "message" : "Selecting Calculator.java - class 1 of 1",
+    "at" : "2026-04-17T09:14:28.330622300Z"
   }, {
     "level" : "INFO",
     "message" : "Generating tests for Calculator.java (attempt 1)",
-    "at" : "2026-04-17T08:47:07.014819900Z"
+    "at" : "2026-04-17T09:14:28.335601500Z"
   }, {
     "level" : "INFO",
     "message" : "Running tests for Calculator.java",
-    "at" : "2026-04-17T08:47:16.760290800Z"
+    "at" : "2026-04-17T09:14:40.571189Z"
   }, {
     "level" : "INFO",
     "message" : "Tests passed after generation for Calculator.java (attempt: 1 )",
-    "at" : "2026-04-17T08:47:32.843459600Z"
+    "at" : "2026-04-17T09:14:57.011714500Z"
   }, {
     "level" : "INFO",
     "message" : "Improvement for Calculator.java after",
-    "at" : "2026-04-17T08:47:32.844457Z"
+    "at" : "2026-04-17T09:14:57.017706900Z"
   }, {
     "level" : "INFO",
     "message" : "=============================================================================================================================================================",
-    "at" : "2026-04-17T08:47:32.845715100Z"
+    "at" : "2026-04-17T09:14:57.019706400Z"
   }, {
     "level" : "INFO",
-    "message" : "All 2 classes processed",
-    "at" : "2026-04-17T08:47:32.845715100Z"
+    "message" : "All 1 classes processed",
+    "at" : "2026-04-17T09:14:57.019706400Z"
   }, {
     "level" : "INFO",
     "message" : "Running final tests after finishing",
-    "at" : "2026-04-17T08:47:32.845715100Z"
+    "at" : "2026-04-17T09:14:57.022212Z"
   } ],
   "failureReason" : "Successfully generated test code",
-  "finishedAt" : "2026-04-17T08:47:50.212629600Z",
+  "finishedAt" : "2026-04-17T09:15:19.033786900Z",
   "gainResults" : {
     "Calculator.java" : {
       "branchCoverageGainPct" : 100.0,
@@ -217,10 +147,10 @@
       "mutationScoreGainPct" : 42.86
     },
     "AdvancedCalculator.java" : {
-      "branchCoverageGainPct" : 100.0,
+      "branchCoverageGainPct" : 0.0,
       "className" : "AdvancedCalculator.java",
-      "lineCoverageGainPct" : 100.0,
-      "mutationScoreGainPct" : 100.0
+      "lineCoverageGainPct" : 0.0,
+      "mutationScoreGainPct" : 0.0
     }
   },
   "projectName" : "https://github.com/dkotschi/SampleJava.git",
@@ -237,16 +167,16 @@
       "totalBranches" : 2
     }, {
       "className" : "AdvancedCalculator.java",
-      "lineCoverage" : 0.0,
-      "branchCoverage" : 0.0,
-      "mutationCoverage" : 0.0,
-      "coveredLines" : 0,
+      "lineCoverage" : 100.0,
+      "branchCoverage" : 100.0,
+      "mutationCoverage" : 100.0,
+      "coveredLines" : 3,
       "totalLines" : 3,
-      "coveredBranches" : 0,
+      "coveredBranches" : 2,
       "totalBranches" : 2
     } ],
-    "testClasses" : 1,
-    "at" : "2026-04-17T08:46:35.458426700Z"
+    "testClasses" : 2,
+    "at" : "2026-04-17T09:14:25.982621600Z"
   }, {
     "label" : "FINAL",
     "classCoverages" : [ {
@@ -269,15 +199,15 @@
       "totalBranches" : 2
     } ],
     "testClasses" : 2,
-    "at" : "2026-04-17T08:47:50.211637200Z"
+    "at" : "2026-04-17T09:15:19.032780800Z"
   } ],
   "repoRoot" : "file:///C:/Users/KotschenrD/Documents/sumida/TestGenAgent/code/files/SampleJava/",
   "runId" : "SampleJava",
-  "startedAt" : "2026-04-17T08:46:12.494409100Z",
+  "startedAt" : "2026-04-17T09:13:59.149915600Z",
   "success" : true,
-  "tokenCost" : 0.00430925,
-  "totalLLMCallMillis" : 28303,
-  "totalLLMCalls" : 8,
-  "totalOutputTokens" : 1311,
-  "totalPromptTokens" : 6749
+  "tokenCost" : 0.00295875,
+  "totalLLMCallMillis" : 24085,
+  "totalLLMCalls" : 7,
+  "totalOutputTokens" : 784,
+  "totalPromptTokens" : 5563
 }
